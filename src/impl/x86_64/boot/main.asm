@@ -1,4 +1,5 @@
 global start
+extern long_mode_start
 
 section .text
 bits 32
@@ -13,7 +14,7 @@ start:
 	call enable_paging
 
 	lgdt [gdt64.pointer]
-	mp gdt64.code_segment:long_mode_start
+	jmp gdt64.code_segment:long_mode_start
 
 	hlt
 
@@ -24,10 +25,6 @@ check_multiboot:
 
 .no_multiboot:
 	mov al, "M"
-	jmp error
-
-.no_cpuid:
-	mov al, "C"
 	jmp error
 
 check_cpuid:
@@ -44,6 +41,10 @@ check_cpuid:
 	cmp eax, ecx
 	je .no_cpuid
 	ret
+
+.no_cpuid:
+	mov al, "C"
+	jmp error
 
 check_long_mode:
 	mov eax, 0x80000000
@@ -130,9 +131,8 @@ stack_top:
 section .rodata
 gdt64:
 	dq 0 ; zero entry
-.code_segment:
-	equ $ - gdt64
-	dq (1 << 43) | (1 << 44) | (1 << 47) | (1 << 53)
+.code_segment: equ $ - gdt64
+	dq (1 << 43) | (1 << 44) | (1 << 47) | (1 << 53) ; code segment
 .pointer:
-	dw $ - gdt64 - 1
-	dq gdt64
+	dw $ - gdt64 - 1 ; length
+	dq gdt64 ; address
