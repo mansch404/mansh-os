@@ -81,3 +81,17 @@ void print_str(char* str) {
 void print_set_color(uint8_t foreground, uint8_t background) {
     color = foreground + (background << 4);
 }
+
+void render_line() {
+    for (size_t y = 0; y < NUM_ROWS; y++) {
+        for (size_t x = 0; x < NUM_COLS; x++)
+        {
+            struct Char renderpx = (struct Char){
+                character : (char) x * y,
+                color : PRINT_COLOR_BROWN,
+            };
+            buffer[y * x] = renderpx;
+        }
+    }
+    print_char('\n');
+}
