@@ -83,12 +83,12 @@ void print_set_color(uint8_t foreground, uint8_t background) {
 }
 
 void render_line() {
-    struct Char renderpx = (struct Char){
-                character : 'A',
-                color : PRINT_COLOR_LIGHT_GREEN,
-            };
     for (size_t y = 0; y < NUM_ROWS; y++) {
         for (size_t x = 0; x < NUM_COLS; x++) {
+            struct Char renderpx = (struct Char){
+                character : 'A',
+                color : x - y,
+            };
             buffer[x + NUM_COLS * y] = renderpx;
         }
     }
