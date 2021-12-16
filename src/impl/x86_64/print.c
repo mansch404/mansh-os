@@ -106,8 +106,13 @@ void render_line(uint8_t col, char charact)
         {
             struct Char renderpx = (struct Char){
                 character : charact,
-                color : x + y,
+                color : x + y + col,
             };
+            if (col < 15) {
+                col++;
+            } else {
+                col = 0;
+            }
             buffer[x + NUM_COLS * y] = renderpx;
         }
     }
@@ -119,7 +124,7 @@ void inf_render()
     uint8_t num2 = 10;
     while (1)
     {
-        render_line((num1 + num2) / 10000, 'A');
+        render_line((num1 + num2) / 300, 'A');
         num1++;
         num2++;
     }
