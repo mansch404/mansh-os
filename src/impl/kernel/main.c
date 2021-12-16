@@ -7,5 +7,5 @@ void kernel_main() {
     print_char('\n');
     print_str("v-beta-0.1");
     print_clear();
-    render_line();
+    inf_render();
 }
