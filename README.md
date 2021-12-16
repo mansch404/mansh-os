@@ -9,5 +9,7 @@ Now in attempt 2, I've managed to get the renderer to print on the whole screen.
 ![renderer_attempt2](res/renderer_attempt2.png)
 Due to changing the rendering algorithm for now, you can see that the display has got these beautiful shapes with all those different colors. Now you can see the possibilities this renderer has.
 ![renderer_attempt3](res/renderer_attempt3.png)
+By adding in the inf_render(void) function, we now got a moving picture. This works due to changing the value of the rendering mechanic during runtime. In the following picture, you can see one frame of it.
+![renderer_attempt4](res/renderer_attempt4.png)
 ## Future plans for the project ##
 Currently manshOS is just a kernel that prints out text and can compile C Code, but in the near future more updates and functionalities will be added.
