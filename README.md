@@ -11,5 +11,7 @@ Due to changing the rendering algorithm for now, you can see that the display ha
 ![renderer_attempt3](res/renderer_attempt3.png)
 By adding in the inf_render(void) function, we now got a moving picture. This works due to changing the value of the rendering mechanic during runtime. In the following picture, you can see one frame of it.
 ![renderer_attempt4](res/renderer_attempt4.png)
+Now I've added in a function, which renders rectangles between certain points on the screen, as you can see in the following picture.
+![renderer_attempt5](res/renderer_attempt5.png)
 ## Future plans for the project ##
 Currently manshOS is just a kernel that prints out text and can compile C Code, but in the near future more updates and functionalities will be added.
