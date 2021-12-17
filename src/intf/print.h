@@ -26,6 +26,6 @@ void print_clear();
 void print_char(char character);
 void print_str(char* string);
 void print_set_color(uint8_t foreground, uint8_t background);
-void render_line(uint8_t col, char charact);
+void render_square(uint8_t fromX, uint8_t toX, uint8_t fromY, uint8_t toY);
 void inf_render();
 void sleep(unsigned int delay);

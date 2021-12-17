@@ -98,22 +98,22 @@ void print_set_color(uint8_t foreground, uint8_t background)
     color = foreground + (background << 4);
 }
 
-void render_line(uint8_t col, char charact)
+void render_square(uint8_t fromX, uint8_t toX, uint8_t fromY, uint8_t toY)
 {
+    uint8_t n = 0;
     for (size_t y = 0; y < NUM_ROWS; y++)
     {
         for (size_t x = 0; x < NUM_COLS; x++)
         {
-            struct Char renderpx = (struct Char){
-                character : charact,
-                color : x + y + col,
-            };
-            if (col < 15) {
-                col++;
-            } else {
-                col = 0;
+            if (x >= fromX && x <= toX && y >= fromY && y <= toY)
+            {
+                struct Char renderpx = (struct Char){
+                    character : ' ',
+                    color : 255,
+                };
+                buffer[x + NUM_COLS * y] = renderpx;
+                n++;
             }
-            buffer[x + NUM_COLS * y] = renderpx;
         }
     }
 }
@@ -122,9 +122,11 @@ void inf_render()
 {
     uint8_t num1 = 1;
     uint8_t num2 = 10;
+    uint8_t sub = 100;
     while (1)
     {
-        render_line((num1 + num2) / 300, 'A');
+        sub++;
+        render_square(4, 75, 2, 22);
         num1++;
         num2++;
     }
