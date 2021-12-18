@@ -13,5 +13,7 @@ By adding in the inf_render(void) function, we now got a moving picture. This wo
 ![renderer_attempt4](res/renderer_attempt4.png)
 Now I've added in a function, which renders rectangles between certain points on the screen, as you can see in the following picture.
 ![renderer_attempt5](res/renderer_attempt5.png)
+When using the method multiple times in the inf_render(void) function, you are able to create symbols or pictures, like the smiley in the following picture.
+![renderer_attempt6](res/renderer_attempt6.png)
 ## Future plans for the project ##
 Currently manshOS is just a kernel that prints out text and can compile C Code, but in the near future more updates and functionalities will be added.
