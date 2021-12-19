@@ -126,13 +126,17 @@ void inf_render()
     while (1)
     {
         sub++;
-        // render_square(4, 30, 2, 22);
-        // render_square(40, 50, 2, 22);
-        render_square(30, 34, 4, 6);
-        render_square(45, 49, 4, 6);
-        render_square(29, 50, 11, 13);
-        render_square(26, 29, 9, 11);
-        render_square(50, 53, 9, 11);
+        //render_square(30, 34, 4, 6);
+        //render_square(45, 49, 4, 6);
+        //render_square(29, 50, 11, 13);
+        //render_square(26, 29, 9, 11);
+        //render_square(50, 53, 9, 11);
+        print_clear();
+        print_str("Welcome to manshOS!");
+        if (num1 == 1000000) {
+            print_str("Welcome!");
+        }
+        
         num1++;
         num2++;
     }
