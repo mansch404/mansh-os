@@ -17,5 +17,7 @@ When using the method multiple times in the inf_render(void) function, you are a
 ![renderer_attempt6](res/renderer_attempt6.png)
 Even though rendering shapes works perfectly fine, rendering text in the inf_render(void) method doesn't work that well yet. If you try it, the text moves really fast and you nearly can't read it as you can see in the following picture.
 ![renderer_attempt7](res/renderer_attempt7.png)
+I implemented the render_text(char *text) function to finally render text on the screen with our new renderer inplemented, however we are currently limited to 9 columns of text. I'll probably fix this problem in the following week. In the following picture you can see some text renderer onto the screen.
+![renderer_attempt8](res/renderer_attempt8.png)
 ## Future plans for the project ##
 Currently manshOS is just a kernel that prints out text and can compile C Code, but in the near future more updates and functionalities will be added.

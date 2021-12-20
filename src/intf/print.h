@@ -29,3 +29,4 @@ void print_set_color(uint8_t foreground, uint8_t background);
 void render_square(uint8_t fromX, uint8_t toX, uint8_t fromY, uint8_t toY);
 void inf_render();
 void sleep(unsigned int delay);
+void render_text(char *text);

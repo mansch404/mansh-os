@@ -118,6 +118,23 @@ void render_square(uint8_t fromX, uint8_t toX, uint8_t fromY, uint8_t toY)
     }
 }
 
+void render_text(char* text)
+{
+    for (size_t y = 0; y < NUM_ROWS; y++)
+    {
+        for (size_t x = 0; x < NUM_COLS; x++)
+        {
+            if (x <= sizeof(text) & y == 0) {
+                struct Char renderpx = (struct Char){
+                    character : (char)text[x],
+                    color : 15,
+                };
+                buffer[x + NUM_COLS * y] = renderpx;
+            }
+        }
+    }
+}
+
 void inf_render()
 {
     uint8_t num1 = 1;
@@ -131,12 +148,8 @@ void inf_render()
         //render_square(29, 50, 11, 13);
         //render_square(26, 29, 9, 11);
         //render_square(50, 53, 9, 11);
-        print_clear();
-        print_str("Welcome to manshOS!");
-        if (num1 == 1000000) {
-            print_str("Welcome!");
-        }
-        
+        render_text("hello :)");
+
         num1++;
         num2++;
     }
