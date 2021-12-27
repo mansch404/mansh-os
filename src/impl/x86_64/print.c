@@ -143,11 +143,6 @@ void inf_render()
     while (1)
     {
         sub++;
-        //render_square(30, 34, 4, 6);
-        //render_square(45, 49, 4, 6);
-        //render_square(29, 50, 11, 13);
-        //render_square(26, 29, 9, 11);
-        //render_square(50, 53, 9, 11);
         render_text("hello :)");
 
         num1++;
