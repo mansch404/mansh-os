@@ -137,15 +137,8 @@ void render_text(char* text)
 
 void inf_render()
 {
-    uint8_t num1 = 1;
-    uint8_t num2 = 10;
-    uint8_t sub = 100;
     while (1)
     {
-        sub++;
         render_text("hello :)");
-
-        num1++;
-        num2++;
     }
 }
